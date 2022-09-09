@@ -48,7 +48,8 @@ def leerUrl(pagina):
 
 # Instantiate the webdriver with the executable location of MS Edge
 # Provide the full location of the path to recognise correctly
-PATH = 'App\msedgedriver.exe'
+cwd = os.getcwd()
+PATH = cwd+'/App/msedgedriver.exe'
 edgeBrowser = webdriver.Edge(PATH)
 
 # This is the step for minimize browser window
@@ -86,6 +87,6 @@ for i in range(len(df)-1):
                 },
                 ignore_index=True,
             )
-cwd = os.getcwd()
+
 archivo = Path(cwd + '/output/'+ 'df_'+date.today().strftime("%d%m%Y")+'.parquet')
 dffinal.to_parquet(archivo)

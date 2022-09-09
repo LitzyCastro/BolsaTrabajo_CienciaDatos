@@ -6,7 +6,7 @@ import pandas as pd
 import re
 import time
 from datetime import date
-
+from pathlib import Path
 
 # Manejo Web, paginas y webScrapping
 # ==============================================================================
@@ -86,5 +86,6 @@ for i in range(len(df)-1):
                 },
                 ignore_index=True,
             )
-
-dffinal.to_parquet("output/df_"+date.today().strftime("%d%m%Y")+'.parquet')
+cwd = os.getcwd()
+archivo = Path(cwd + '/output/'+ 'df_'+date.today().strftime("%d%m%Y")+'.parquet')
+dffinal.to_parquet(archivo)

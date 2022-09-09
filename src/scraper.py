@@ -2,7 +2,7 @@
 # ==============================================================================
 import numpy as np
 import pandas as pd
-from tabulate import tabulate
+#from tabulate import tabulate
 import re
 import time
 from datetime import date
